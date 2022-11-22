@@ -1,0 +1,14 @@
+FIRSTNAME^^^LASTNAME^^^EMAIL^^^AGE^^^ADDRESS
+Abdullah^^^Adebayo^^^ABDUL@GMAIL.COM^^^17^^^ABDUL@GMAIL.COM^^^123^^^10,Abayomi street^^^Male^^^ZENITH/ADMIN-174/Abd0
+Adebay^^^Abdullah^^^17^^^10,ABAYOMI STREET^^^123^^^ddfjk^^^male^^^ZENITH/ADMIN-124/Ade0
+Adebayo^^^Abdullah^^^17^^^ADEBAYO@GMAIL.COM^^^1234^^^10,Abayomijeromu^^^male^^^ZENITH/ADMIN-105/Ade0
+ade^^^ade^^^ADE^^^ade^^^ade^^^ade^^^ade^^^ZENITH/ADMIN-375/ade0
+ade^^^ade^^^ADE^^^ade^^^ade^^^ade^^^ade^^^ZENITH/ADMIN-452/ade0
+ade^^^ade^^^ADE^^^ade^^^ade^^^ade^^^ade^^^ZENITH/ADMIN-181/ade0
+Adebayo^^^Abdullah^^^17^^^ADEBAYO@GMAIL.COM^^^1234^^^10,Abayomi street,ipaja,lagos^^^male^^^ZENITH/ADMIN-344/Ade0
+Adebayo^^^Abdullah^^^17^^^ADEBAYO@GMAIL.COM^^^1234^^^10,Abayomi street,ipaja Lagos^^^male^^^ZENITH/ADMIN-307/Ade0
+Adebayo^^^Abdullah^^^17^^^ADEBAYO@GMAIL.COM^^^1234^^^10,Abayomi street,ipaja,Lagos^^^male^^^ZENITH/ADMIN-396/Ade0
+Tijani^^^Uthman^^^UTHMAN@GMAIL.COM^^^123^^^08038378155^^^10,Abayomi street,ipaja ,Lagos^^^male^^^ZENITH/ADMIN-232/Tij0
+Rasheed^^^Adekunle^^^ADEKUNLE@GMAIL.COM^^^1567^^^08060619774^^^10,Abayomi street,ipaja,Lagos^^^male^^^ZENITH/ADMIN-497/Ras0
+Simiat^^^Tijani^^^SIMIAT@GMAIL.COM^^^2346^^^09056367342^^^12,Majekodunmi street ipaja,Lagos^^^female^^^ZENITH/ADMIN-289/Sim0
+Tosin^^^Jimoh^^^JIMOG@GMAIL.COM^^^3427^^^0705637623^^^18,Madarikan street,ikotun,Lagos^^^male^^^ZENITH/ADMIN-303/Tos0
