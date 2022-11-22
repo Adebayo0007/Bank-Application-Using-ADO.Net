@@ -1760,11 +1760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\user\\Desktop\\LegitBankApp\\LegitBankApp.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\LegitBankApp - Using Ade.Net\\LegitBankApp.csproj",
       "projectName": "LegitBankApp",
-      "projectPath": "c:\\Users\\user\\Desktop\\LegitBankApp\\LegitBankApp.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\LegitBankApp - Using Ade.Net\\LegitBankApp.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\user\\Desktop\\LegitBankApp\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\LegitBankApp - Using Ade.Net\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
