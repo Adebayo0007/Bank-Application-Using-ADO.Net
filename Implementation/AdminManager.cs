@@ -24,13 +24,13 @@ namespace LegitBankApp.Implementations
                 
                 Admin ad = new Admin(firstName, lastName, age, email, password, phoneNumber, address, gender);
 
-                System.Console.WriteLine($"\n\t<<<<<Your ID number is: {ad.staffID}>>>>>");
+                System.Console.WriteLine($"\n\t<<<<<Your ID number is: {ad.StaffID}>>>>>");
                
 
 
                 using (var connection = new MySqlConnection(conn))
                 {
-                    string qur = $"insert into admin (staffId,firstName, lastName, age, email, password, phoneNumber, address, gender) values ('{ad.staffID}','{ad.firstName}','{ad.lastName}','{ad.age}','{ad.email.Trim().ToUpper()}','{ad.password}','{ad.phoneNumber}','{ad.address}','{ad.gender}')";
+                    string qur = $"insert into admin (staffId,firstName, lastName, age, email, password, phoneNumber, address, gender) values ('{ad.StaffID}','{ad.FirstName}','{ad.LastName}','{ad.Age}','{ad.Email.Trim().ToUpper()}','{ad.Password}','{ad.PhoneNumber}','{ad.Address}','{ad.Gender}')";
                     connection.Open();
                     using (var command = new MySqlCommand(qur, connection))
                     {
@@ -108,7 +108,7 @@ namespace LegitBankApp.Implementations
                             if(execute > 0)
                             {
 
-                                System.Console.WriteLine($"\n\t{admin.firstName} {admin.lastName} Successfully deleted. ");
+                                System.Console.WriteLine($"\n\t{admin.FirstName} {admin.LastName} Successfully deleted. ");
                             }
                            
                         }
@@ -183,7 +183,7 @@ namespace LegitBankApp.Implementations
             {
                 System.Console.WriteLine(ex.Message);
             }
-            return admin is not null && admin.email.ToUpper() == email.ToUpper() && admin.password == passWord ? admin : null;
+            return admin is not null && admin.Email.ToUpper() == email.ToUpper() && admin.Password == passWord ? admin : null;
 
             }
 

@@ -17,13 +17,13 @@ namespace LegitBankApp.Implementations
             {
                 
                 ManagingDirector manage = new ManagingDirector(firstName, lastName,age,phoneNumber);
-                string u = manage.managerId;
+                string u = manage.ManagerId;
                 
                
                
                 using (var connection = new MySqlConnection(conn))
                 {
-                    string qur = $"insert into Manager (managerId,firstName, lastName , age, phoneNumber) values ('{u}','{manage.firstName}','{manage.lastName}','{manage.age}','{manage.phoneNumber}')";
+                    string qur = $"insert into Manager (managerId,firstName, lastName , age, phoneNumber) values ('{u}','{manage.FirstName}','{manage.LastName}','{manage.Age}','{manage.PhoneNumber}')";
                     connection.Open();
                     using (var command = new MySqlCommand(qur, connection))
                     {

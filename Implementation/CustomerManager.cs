@@ -21,14 +21,14 @@ namespace LegitBankApp.Implementations
                
                 using (var connection = new MySqlConnection(conn))
                 {
-                    string qur = $"insert into Customer (firstName, lastName, age, email, password, phoneNumber, accountNumber, gender,pin,accountType,accountBalance) values ('{custom.firstName}','{custom.lastName}','{custom.age}','{custom.email.Trim().ToUpper()}','{custom.password}','{custom.phoneNumber}','{custom.accountNumber}','{custom.gender}','{custom.pin}','{custom.accountType}','{custom.accountBalance}')";
+                    string qur = $"insert into Customer (firstName, lastName, age, email, password, phoneNumber, accountNumber, gender,pin,accountType,accountBalance) values ('{custom.FirstName}','{custom.LastName}','{custom.Age}','{custom.Email.Trim().ToUpper()}','{custom.Password}','{custom.PhoneNumber}','{custom.AccountNumber}','{custom.Gender}','{custom.Pin}','{custom.AccountType}','{custom.AccountBalance}')";
                     connection.Open();
                     using (var command = new MySqlCommand(qur, connection))
                     {
                         var execute = command.ExecuteNonQuery();
                         if(execute > 0)
                         {
-                            System.Console.WriteLine($"<<<<<Your Account Number is : {custom.accountNumber}>>>>>");
+                            System.Console.WriteLine($"<<<<<Your Account Number is : {custom.AccountNumber}>>>>>");
                              System.Console.WriteLine($"\n\tCongratulation {firstName} {lastName},registration completed");
 
                         }
@@ -57,7 +57,7 @@ namespace LegitBankApp.Implementations
                             {
                                 Customer custom = new Customer(" ", " ", " ", " ", " ", " ", " ", " "," "," ",0);
 
-                                System.Console.WriteLine($"\n\t{custom.firstName} {custom.lastName} Successfully deleted. ");
+                                System.Console.WriteLine($"\n\t{custom.FirstName} {custom.LastName} Successfully deleted. ");
                             }
                            
                         }
@@ -159,7 +159,7 @@ namespace LegitBankApp.Implementations
             {
                 System.Console.WriteLine(ex.Message);
             }
-            return custom is not null && custom.email.ToUpper() == email.ToUpper() && custom.password == password ? custom : null;
+            return custom is not null && custom.Email.ToUpper() == email.ToUpper() && custom.Password == password ? custom : null;
         }
 
 

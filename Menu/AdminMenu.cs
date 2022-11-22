@@ -336,7 +336,7 @@ public void LogInManagingDirector()
                    if(customer3 != null)
                             {
                                 System.Console.WriteLine("<<<<Filter Successful>>>>>");
-                                System.Console.WriteLine($"\nFirst Name: {customer3.firstName}\tLast Name: {customer3.lastName}\tAge: {customer3.age}\tMail: {customer3.email}\tPassword: {customer3.password}\n\nPhone number: {customer3.phoneNumber}\tGender:{customer3.gender}\tPin: {customer3.pin}\tAccount Type: {customer3.accountType}\tAccount Balance: {customer3.accountBalance}");
+                                System.Console.WriteLine($"\nFirst Name: {customer3.FirstName}\tLast Name: {customer3.LastName}\tAge: {customer3.Age}\tMail: {customer3.Email}\tPassword: {customer3.Password}\n\nPhone number: {customer3.PhoneNumber}\tGender:{customer3.Gender}\tPin: {customer3.Pin}\tAccount Type: {customer3.AccountType}\tAccount Balance: {customer3.AccountBalance}");
                             }
                             else
                             {
@@ -538,7 +538,7 @@ public void LogInManagingDirector()
                              if(admin3 != null)
                             {
                                 System.Console.WriteLine("<<<<Filter Successful>>>>>");
-                                System.Console.WriteLine($"\n{admin3.email}\t{admin3.firstName}\t{admin3.lastName}\t{admin3.age}\t{admin3.password}\t{admin3.phoneNumber}\t{admin3.address}\t{admin3.gender}");
+                                System.Console.WriteLine($"\n{admin3.Email}\t{admin3.FirstName}\t{admin3.LastName}\t{admin3.Age}\t{admin3.Password}\t{admin3.PhoneNumber}\t{admin3.Address}\t{admin3.Gender}");
                             }
                             else
                             {
@@ -620,7 +620,7 @@ public void LogInManagingDirector()
                             Console.Write("\tEnter four secrete digit Pin: ");
                             pin1 = Console.ReadLine();
                         }while(pin1.Length != 4 );
-                    double y = Transaction.accountBalance-=withdraw;
+                    double y = Transaction.AccountBalance-=withdraw;
                     double balance = y;
                      long depo = 0;
                      long airtime = 0;
@@ -632,7 +632,7 @@ public void LogInManagingDirector()
                      var check = cus.GetCustomer(acc);
                      if(check != null)
                      {
-                        if(check.pin == pin1)
+                        if(check.Pin == pin1)
                         {
 
                         _iTransactionManager.CreateWithdrawal(balance,withdraw,depo,airtime,transfer,acc,time,refNum,pin1);
@@ -681,7 +681,7 @@ public void LogInManagingDirector()
                             pin1 = Console.ReadLine();
                         }while(pin1.Length != 4 );
                     
-                    double x = Transaction.accountBalance+= depo;
+                    double x = Transaction.AccountBalance+= depo;
                     double balance = x;
                      long withdraw = 0;
                      long airtime = 0;
@@ -694,7 +694,7 @@ public void LogInManagingDirector()
                      var check = cus.GetCustomer(acc);
                      if(check != null)
                      {
-                        if(check.pin == pin1)
+                        if(check.Pin == pin1)
                         {
                         _iTransactionManager.CreateDeposit(balance,withdraw,depo,airtime,transfer,acc,time,refNum,pin1);
                         }
@@ -738,7 +738,7 @@ public void LogInManagingDirector()
                             Console.Write("\tEnter four secrete digit Pin: ");
                             pin1 = Console.ReadLine();
                         }while(pin1.Length != 4 );
-                    double i = Transaction.accountBalance-=airtime;
+                    double i = Transaction.AccountBalance-=airtime;
                     double balance = i;
                      long withdraw = 0;
                      long depo = 0;
@@ -749,7 +749,7 @@ public void LogInManagingDirector()
                      var check = cus.GetCustomer(acc);
                      if(check != null)
                      {
-                        if(check.pin == pin1)
+                        if(check.Pin == pin1)
                         {
                              _iTransactionManager.CreateAirtime(balance,withdraw,depo,airtime,transfer,acc,time,refNum,pin1);
 
@@ -801,7 +801,7 @@ public void LogInManagingDirector()
                             pin1 = Console.ReadLine();
                         }while(pin1.Length != 4 );
                     
-                    double x = Transaction.accountBalance-= transfer;
+                    double x = Transaction.AccountBalance-= transfer;
                     double balance = x;
                      long withdraw = 0;
                      long airtime = 0;
@@ -814,7 +814,7 @@ public void LogInManagingDirector()
                      var check = cus.GetCustomer(acc);
                      if(check != null)
                      {
-                        if(check.pin == pin1)
+                        if(check.Pin == pin1)
                         {
                         _iTransactionManager.Transfer(balance,withdraw,depo,airtime,transfer,acc,acc1,time,refNum,pin1);
                         }
@@ -849,7 +849,7 @@ public void LogInManagingDirector()
                         var cus = new Customer(" "," "," "," "," "," "," "," "," "," ",0);
                         if(tra != null)
                         {
-                            System.Console.WriteLine($"\nAccount Number= {acc}\tAccoun Balance= {Transaction.accountBalance}\tWithdrawal Amount= {Transaction.withdrawalAmount}\tDeposit Amoun= {Transaction.depositAmount}\tAirtime Amount= {Transaction.airtimeAmount}\tRef num = {Transaction.dateTime}\tTransfer= {Transaction.transferAmount}");
+                            System.Console.WriteLine($"\nAccount Number= {acc}\tAccoun Balance= {Transaction.AccountBalance}\tWithdrawal Amount= {Transaction.WithdrawalAmount}\tDeposit Amoun= {Transaction.DepositAmount}\tAirtime Amount= {Transaction.AirtimeAmount}\tRef num = {Transaction.DateTime}\tTransfer= {Transaction.TransferAmount}");
                         }
                     }
 

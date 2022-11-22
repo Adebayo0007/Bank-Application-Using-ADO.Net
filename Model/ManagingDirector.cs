@@ -3,25 +3,25 @@ namespace LegitBankApp.Model
 {
     public class ManagingDirector 
     {
-        public string firstName {get; set;}
-        public string lastName {get; set;}
-        public string age     {get; set;}
-        public string phoneNumber  {get; set;}
-        public string managerId   {get; set;}
+        public string FirstName {get; set;}
+        public string LastName {get; set;}
+        public string Age     {get; set;}
+        public string PhoneNumber  {get; set;}
+        public string ManagerId   {get; set;}
 
         public ManagingDirector(string firstName,string lastName,string age,string phoneNumber)
         {
-            this.firstName   = firstName;
-            this.lastName    = lastName;
-            this.age         = age;
-            this.phoneNumber = phoneNumber;
-            this.managerId   = GenerateManagerID();
+            this.FirstName   = firstName;
+            this.LastName    = lastName;
+            this.Age         = age;
+            this.PhoneNumber = phoneNumber;
+            this.ManagerId   = GenerateManagerID();
         }
 
          public string GenerateManagerID()
             {
                 var rand = new Random();
-                string id = "ZENITH/MANAGER-"+rand.Next(100, 500).ToString()+"/" +firstName[0]+firstName[1]+firstName[0]+"0" ;
+                string id = "ZENITH/MANAGER-"+rand.Next(100, 500).ToString()+"/" +FirstName[0]+FirstName[1]+FirstName[0]+"0" ;
                 return id;
 
             }

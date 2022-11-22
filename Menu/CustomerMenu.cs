@@ -76,31 +76,31 @@ namespace LegitBankApp.Menu
             if(ch ==1)
             {
                 accType = "Student account";
-                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.accountNumber,gender,pin,accType);
+                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.AccountNumber,gender,pin,accType);
             }
 
              if(ch ==2)
             {
                 accType = "Savings account";
-                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.accountNumber,gender,pin,accType);
+                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.AccountNumber,gender,pin,accType);
             }
 
              if(ch ==3)
             {
                 accType = "Current account";
-                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.accountNumber,gender,pin,accType);
+                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.AccountNumber,gender,pin,accType);
             }
 
              if(ch ==4)
             {
                 accType = "Business account";
-                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.accountNumber,gender,pin,accType);
+                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.AccountNumber,gender,pin,accType);
             }
 
              if(ch ==5)
             {
                 accType = "Joint account";
-                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.accountNumber,gender,pin,accType);
+                _iCustomerManager.CreateCustomer(firstName,lastName,age,email,passWord,number,customer.AccountNumber,gender,pin,accType);
             }
 
             Console.Write($"\n\t<<<<<-Congratulations !->>>>>\n\t<<<<<-Registration Completed->>>>> ");
@@ -143,7 +143,7 @@ namespace LegitBankApp.Menu
             var customer = _iCustomerManager.Login(mail,pass);
             if (customer != null)
             {
-                Console.WriteLine($"Welcome {customer.firstName } {customer.lastName}, you've successfully Logged in!");
+                Console.WriteLine($"Welcome {customer.FirstName } {customer.LastName}, you've successfully Logged in!");
                 Console.WriteLine("\n\tEnter 0 to opt out\n\tEnter 1 to Make Transaction");
                 int input;
                 int.TryParse(Console.ReadLine(),out input);
