@@ -53,7 +53,7 @@ namespace LegitBankApp.Implementations
                                     {
 
                                         System.Console.WriteLine($"Transaction successful ! ");
-                                        System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {airtimeAmount}\n\tYour balance is: {test.AccountBalance}\n\tDate: {dateTime}");
+                                        System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {airtimeAmount}\n\tYour balance is: # {test.AccountBalance}\n\tDate: {dateTime}");
 
                                     }
                                 }
@@ -118,7 +118,7 @@ namespace LegitBankApp.Implementations
                                 {
 
                                     System.Console.WriteLine($"Transaction successful ! ");
-                                    System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {airtimeAmount}\n\tYour balance is: {test.AccountBalance}\n\tDate: {dateTime}");
+                                    System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {airtimeAmount}\n\tYour balance is: # {test.AccountBalance}\n\tDate: {dateTime}");
 
                                 }
                             }
@@ -178,7 +178,7 @@ namespace LegitBankApp.Implementations
                         {
 
                             System.Console.WriteLine($"Transaction successful ! ");
-                            System.Console.WriteLine($"\n\tTnx: Credit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {depositAmount}\n\tInto: {accountnumber2}\n\tYour balance is: {test.AccountBalance}\n\tDate: {dateTime}");
+                            System.Console.WriteLine($"\n\tTnx: Credit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {depositAmount}\n\tInto: {accountnumber2}\n\tYour balance is: # {test.AccountBalance}\n\tDate: {dateTime}");
 
                         }
                     }
@@ -228,6 +228,16 @@ namespace LegitBankApp.Implementations
                                 var cus = new Customer(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", 0);
                                 cus.AccountBalance = test.AccountBalance;
                                 accountBalance = test.AccountBalance;
+                                double charges;
+                                
+                                  if(withdrawalAmount >= 2000)
+                                        {
+                                            charges = 0.005*withdrawalAmount;
+                                            test.AccountBalance -= charges;
+
+                                        System.Console.WriteLine($"<<<<<Your VAT: # {charges}>>>>>");
+                                        }
+                               
                                 string qur = $"insert into Transaction (accountBalance,withdrawalAmount,depositAmount,airtimeAmount,accountNumber,time,refNum,pin) values ('{test.AccountBalance}','{Transaction.WithdrawalAmount}','{Transaction.DepositAmount}','{Transaction.AirtimeAmount}','{accountnumber2}','{Transaction.DateTime}','{u}','{pin}')";
                                 string qur2 = $"update customer set accountBalance = {test.AccountBalance} where accountNumber = {accountnumber2}";
 
@@ -235,12 +245,14 @@ namespace LegitBankApp.Implementations
                                 connection.Open();
                                 using (var command = new MySqlCommand(qur, connection))
                                 {
+
                                     var execute = command.ExecuteNonQuery();
+                                   
                                     if (execute > 0)
                                     {
-
+                                            
                                         System.Console.WriteLine($"Transaction successful ! ");
-                                        System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {withdrawalAmount}\n\tFrom: {accountnumber2}\n\tYour balance is: {test.AccountBalance}\n\tDate: {dateTime}");
+                                        System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {withdrawalAmount}\n\tFrom: {accountnumber2}\n\tYour balance is: # {test.AccountBalance}\n\tVDate: {dateTime}");
 
                                     }
                                 }
@@ -296,6 +308,14 @@ namespace LegitBankApp.Implementations
                             var cus = new Customer(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", 0);
                             cus.AccountBalance = test.AccountBalance;
                             accountBalance = test.AccountBalance;
+                            double charges;
+                             if(withdrawalAmount >= 2000)
+                                        {
+                                            charges = 0.005*withdrawalAmount;
+                                            test.AccountBalance -= charges;
+
+                                        System.Console.WriteLine($"<<<<<Your VAT: # {charges}>>>>>");
+                                        }
                             string qur = $"insert into Transaction (accountBalance,withdrawalAmount,depositAmount,airtimeAmount,accountNumber,time,refNum,pin) values ('{test.AccountBalance}','{Transaction.WithdrawalAmount}','{Transaction.DepositAmount}','{Transaction.AirtimeAmount}','{accountnumber2}','{Transaction.DateTime}','{u}','{pin}')";
                             string qur2 = $"update customer set accountBalance = {test.AccountBalance} where accountNumber = {accountnumber2}";
 
@@ -308,7 +328,7 @@ namespace LegitBankApp.Implementations
                                 {
 
                                     System.Console.WriteLine($"Transaction successful ! ");
-                                    System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {withdrawalAmount}\n\tFrom: {accountnumber2}\n\tYour balance is: {test.AccountBalance}\n\tDate: {dateTime}");
+                                    System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {accountnumber2[0]}{accountnumber2[1]}*****{accountnumber2[7]}{accountnumber2[8]}*\n\tAmt: NGN {withdrawalAmount}\n\tFrom: {accountnumber2}\n\tYour balance is: # {test.AccountBalance}\n\tDate: {dateTime}");
 
                                 }
                             }
@@ -368,6 +388,14 @@ namespace LegitBankApp.Implementations
                                 Transaction.AccountBalance = test.AccountBalance;
                                 var cus = new Customer(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", 0);
                                 cus.AccountBalance = test.AccountBalance;
+                                double charges;
+                                 if(transferAmount >= 2000)
+                                        {
+                                            charges = 0.005*transferAmount;
+                                            test.AccountBalance -= charges;
+
+                                        System.Console.WriteLine($"<<<<<Your VAT: # {charges}>>>>>");
+                                        }
                                 string qur = $"insert into Transaction (accountBalance,withdrawalAmount,depositAmount,airtimeAmount,accountNumber,time,refNum,pin,transferAmount) values ('{test.AccountBalance}','{Transaction.WithdrawalAmount}','{Transaction.DepositAmount}','{Transaction.AirtimeAmount}','{senderAccountnumber}','{Transaction.DateTime}','{u}','{pin}','{transferAmount}')";
                                 string qur2 = $"update customer set accountBalance = {test.AccountBalance} where accountNumber = {senderAccountnumber}";
                                 string qur3 = $"update customer set accountBalance = {test1.AccountBalance+=transferAmount} where accountNumber = {recieverAccountnumber}";
@@ -381,7 +409,7 @@ namespace LegitBankApp.Implementations
                                     {
 
                                         System.Console.WriteLine($"Transaction successful ! ");
-                                        System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {senderAccountnumber[0]}{senderAccountnumber[1]}*****{senderAccountnumber[7]}{senderAccountnumber[8]}*\n\tAmt: NGN {transferAmount}\n\tYour balance is: {test.AccountBalance}\n\tDate: {dateTime}");
+                                        System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {senderAccountnumber[0]}{senderAccountnumber[1]}*****{senderAccountnumber[7]}{senderAccountnumber[8]}*\n\tAmt: NGN {transferAmount}\n\tYour balance is: # {test.AccountBalance}\n\tDate: {dateTime}");
 
                                     }
                                 }
@@ -438,6 +466,14 @@ namespace LegitBankApp.Implementations
                             Transaction.AccountBalance = test.AccountBalance;
                             var cus = new Customer(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", 0);
                             cus.AccountBalance = test.AccountBalance;
+                            double charges;
+                             if(transferAmount >= 2000)
+                                        {
+                                            charges = 0.005*withdrawalAmount;
+                                            test.AccountBalance -= charges;
+
+                                        System.Console.WriteLine($"<<<<<Your VAT: # {charges}>>>>>");
+                                        }
                             string qur = $"insert into Transaction (accountBalance,withdrawalAmount,depositAmount,airtimeAmount,accountNumber,time,refNum,pin,transferAmount) values ('{test.AccountBalance}','{Transaction.WithdrawalAmount}','{Transaction.DepositAmount}','{Transaction.AirtimeAmount}','{senderAccountnumber}','{Transaction.DateTime}','{u}','{pin}','{transferAmount}')";
                                 string qur2 = $"update customer set accountBalance = {test.AccountBalance} where accountNumber = {senderAccountnumber}";
                                 string qur3 = $"update customer set accountBalance = {test1.AccountBalance+=transferAmount} where accountNumber = {recieverAccountnumber}";
@@ -451,7 +487,7 @@ namespace LegitBankApp.Implementations
                                 {
 
                                     System.Console.WriteLine($"Transaction successful ! ");
-                                    System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {senderAccountnumber[0]}{senderAccountnumber[1]}*****{senderAccountnumber[7]}{senderAccountnumber[8]}*\n\tAmt: NGN {transferAmount}\n\tYour balance is: {test.AccountBalance}\n\tDate: {dateTime}");
+                                    System.Console.WriteLine($"\n\tTnx: Debit\n\tAc: {senderAccountnumber[0]}{senderAccountnumber[1]}*****{senderAccountnumber[7]}{senderAccountnumber[8]}*\n\tAmt: NGN {transferAmount}\n\tYour balance is: # {test.AccountBalance}\n\tDate: {dateTime}");
 
                                 }
                             }

@@ -11,7 +11,6 @@ namespace LegitBankApp.Implementations
     {
 
         
-        public string _data { get; set; }
         string conn = "Server=localhost;port=3306;Database=bankapp;Uid=root;Pwd=Adebayo58641999";
 
        

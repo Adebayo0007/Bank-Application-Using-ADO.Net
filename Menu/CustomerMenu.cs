@@ -265,18 +265,6 @@ namespace LegitBankApp.Menu
                         }
 
                     }
-
-
-
-
-
-
-
-
-
-
-
-
         
     }
 }
